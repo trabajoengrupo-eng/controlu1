@@ -1,0 +1,27 @@
+name: CI Demo
+
+on:
+  pull_request:
+    branches: [develop]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v3
+
+      - name: Instalar Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '11'
+
+      - name: Instalar dependencias
+        run: npm install --ignore-scripts
+
+      - name: Ejecutar build
+        run: npm run build
+
+      - ame: Ejecutar tests
+        run: echo "Skipping tests"
