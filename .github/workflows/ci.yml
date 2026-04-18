@@ -15,7 +15,7 @@ jobs:
       - name: Instalar Node
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '6.17.1'
 
       - name: Instalar dependencias
         run: npm install
